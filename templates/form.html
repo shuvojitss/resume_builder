@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Create Your Resume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Resume</h1>
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <label>Name:</label>
+            <input type="text" name="name" required />
+
+            <label>Email:</label>
+            <input type="email" name="email" required />
+
+            <label>Phone:</label>
+            <input type="tel" name="phone" required />
+
+            <label>Professional Summary:</label>
+            <textarea name="summary" rows="4"></textarea>
+
+            <label>Education:</label>
+            <textarea name="education" rows="4"></textarea>
+
+            <label>Work Experience:</label>
+            <textarea name="experience" rows="4"></textarea>
+
+            <label>Skills:</label>
+            <textarea name="skills" rows="4"></textarea>
+
+            <label>Upload Photo:</label>
+            <input type="file" name="image" accept="image/*" />
+
+            <button type="submit">Build Resume</button>
+        </form>
+    </div>
+</body>
+</html>

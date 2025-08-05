@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ resume.name }} - Resume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container resume">
+        <h1>{{ resume.name }}</h1>
+        
+        {% if resume.image %}
+            <img src="{{ url_for('static', filename='uploads/' + resume.image) }}" alt="Profile Photo" class="profile-pic"/>
+        {% endif %}
+
+        <p><strong>Email:</strong> {{ resume.email }}</p>
+        <p><strong>Phone:</strong> {{ resume.phone }}</p>
+
+        <h2>Professional Summary</h2>
+        <p>{{ resume.summary }}</p>
+
+        <h2>Education</h2>
+        <p>{{ resume.education }}</p>
+
+        <h2>Work Experience</h2>
+        <p>{{ resume.experience }}</p>
+
+        <h2>Skills</h2>
+        <p>{{ resume.skills }}</p>
+
+        <a href="{{ url_for('download_pdf', resume_id=resume_id) }}" class="download-btn">Download PDF</a>
+    </div>
+</body>
+</html>
