@@ -104,4 +104,4 @@ def download_pdf(resume_id):
     return response
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="5000",debug=True)
